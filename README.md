@@ -1,22 +1,4 @@
-# QAsystem
-
-第七届中软杯（智能问答系统）
-
-非常感谢杨大帅比和张小可爱为项目所付出的所有心血，最后一次虽有遗憾却不后悔的中软杯
-
-QAQ团队，和我们的logo
-
-<img src="https://github.com/wangfin/QAsystem/raw/master/pic/QAlogo.png" style="zoom: 50%;"/>
-
-bilibili视频地址：[视频网址](https://www.bilibili.com/video/av35481883)
-
-视频里可以讲解的比较仔细，可以看看。实际上整个项目完成度还很欠缺，较多地方因时间原因未完成，或者只是仓促完成，导致有些部分逻辑很简单，所以效果也不是很好，各位也就当看个思路就好。
-
----
-
 ## 需求介绍
-
-题目要求：[中软杯赛题网址](http://www.cnsoftbei.com/plus/view.php?aid=321)
 
 简略概述要求：
 1. 构建一个完整的QA系统
