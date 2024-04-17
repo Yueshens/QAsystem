@@ -1,7 +1,3 @@
-elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.0/elasticsearch-analysis-ik-6.8.0.zip
-
-
-
 # QAsystem
 
 第七届中软杯（智能问答系统）
