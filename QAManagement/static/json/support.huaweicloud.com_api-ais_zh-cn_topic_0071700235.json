@@ -1,0 +1,1 @@
+{"title": "请求认证方式", "titlecontent": " \n\n 调用接口有如下两种认证方式，您可以任选其中一种进行认证鉴权。 \n \n  Token认证：通过Token认证调用请求。\n  AK/SK认证：通过AK(Access Key ID)/SK(Secret Access Key)加密调用请求。AK/SK认证安全性更高。\n  \n", "link": "support.huaweicloud.com_api-ais_zh-cn_topic_0071700235.html", "subject": ["帮助中心", "人工智能服务", "接口参考", "接口调用方法", "请求认证方式"]}
