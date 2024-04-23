@@ -194,9 +194,10 @@ class Elas():
         res=self.es.indices.delete(index=myindex,ignore=[400, 404])
 
     ####修改函数，支持问题修改和答案修改，调用时要分开调用,因为不是查询，所有没有写返回值，你可以考虑下是写返回值，还是修改后通过search查看。
-    def updateqa(self, myindex, myquestion,myanswer, mylink,mysubject,hitid,qfh1,qfh2):  # 修改问题，同时精确问题域也要被修改
+    def updateqa(self, myindex, myquestion,myanswer, mylink,mysubject,hitid,qfh1,qfh2,myquescount,myuserlike):  # 修改问题，同时精确问题域也要被修改
         res = self.es.update(index=myindex, doc_type='user', id=hitid,
-                            body={"doc": {"question": myquestion, "accuratequestion": myquestion,"answer":myanswer,"link":mylink,"subject":mysubject,"questionfh1": qfh1,"questionfh2": qfh2}})
+                            body={"doc": {"question": myquestion, "accuratequestion": myquestion,"answer":myanswer,"link":mylink,"subject":mysubject,"questionfh1": qfh1,"questionfh2": qfh2,
+                                          "quescount":myquescount,"userlike":myuserlike}})
 
     def idsearch(self,myindex,myid):
         result = []

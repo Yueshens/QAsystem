@@ -156,11 +156,11 @@ def Add(request):
     if request.method == 'POST':
         jsondata = request.POST.get("jsondata")
         received_json_data = json.loads(jsondata)
-        id = received_json_data['问题编号']
-        question = received_json_data['具体问题']
-        answer = received_json_data['答案']
-        link = received_json_data['答案链接']
-        subject = received_json_data['主题']
+        id = received_json_data['ID']
+        question = received_json_data['Question']
+        answer = received_json_data['Answer']
+        link = received_json_data['Link']
+        subject = received_json_data['Subject']
 
         sim_ques1 = ''
         sim_ques2 = ''
@@ -179,11 +179,11 @@ def modify(request):
     if request.method == 'POST':
         jsonchangeddata = request.POST.get("jsondata")
         received_json_changed_data = json.loads(jsonchangeddata)
-        id = received_json_changed_data['问题编号']
-        question = received_json_changed_data['具体问题']
-        answer = received_json_changed_data['答案']
-        link = received_json_changed_data['答案链接']
-        subject = received_json_changed_data['主题']
+        id = received_json_changed_data['ID']
+        question = received_json_changed_data['Question']
+        answer = received_json_changed_data['Answer']
+        link = received_json_changed_data['Link']
+        subject = received_json_changed_data['Subject']
 
         sim_ques1 = ''
         sim_ques2 = ''
@@ -194,7 +194,7 @@ def modify(request):
         #print(id,question,answer,link,subject)
         withweb_all = Withweb_all()
 
-        withweb_all.update(myindex,question,answer,link,subject,id,sim_ques1,sim_ques2)
+        withweb_all.update(myindex,question,answer,link,subject,id,sim_ques1,sim_ques2,0,0)
 
         return HttpResponse("modify ok")
     else:
@@ -951,7 +951,9 @@ def create_model(request):
     else:
         return HttpResponse("失败")
 
-
+import datetime
+import random
+from datetime import datetime, timedelta
 # 在用户信息首页展示所有用户信息的页面
 def search_users_all(request):
     if request.method == 'POST':
@@ -959,6 +961,35 @@ def search_users_all(request):
         limit = request.POST.get("pageIndex")
         users = []
         data_json = {}
+        result_c = UserMining.objects.all()
+
+        start_date = datetime(2024, 1, 1)
+        end_date = datetime(2024, 4, 30)
+
+        # for obj in result_c:
+        #     obj.usercollect = random.choice(['Yes', 'No'])
+        #     if obj.id % 3 == 0:
+        #         obj.userip = '192.168.10.1'
+        #         random_date = start_date + timedelta(
+        #             days=random.randint(0, (end_date - start_date).days),
+        #             hours=random.randint(0, 23),
+        #             minutes=random.randint(0, 59),
+        #             seconds=random.randint(0, 59)
+        #         )
+        #         obj.times = random_date
+        #         obj.save()
+
+        #     if obj.id % 4 == 0:
+        #         obj.userip = '192.168.10.2'
+        #         random_date = start_date + timedelta(
+        #             days=random.randint(0, (end_date - start_date).days),
+        #             hours=random.randint(0, 23),
+        #             minutes=random.randint(0, 59),
+        #             seconds=random.randint(0, 59)
+        #         )
+        #         obj.times = random_date
+        #         obj.save()
+        #     obj.save()
 
         result = UserMining.objects.all().order_by('times')
         for i in range(len(result)):

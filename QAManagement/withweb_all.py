@@ -23,7 +23,7 @@ class Withweb_all():
     def initk2(self,myindex):
         myk2.init(myindex)
 
-    def webinsert(self,myindex,q,accurateq,a,link,subject,myid,quescount,userlike,qf1='',qf2=''):
+    def webinsert(self,myindex,q,accurateq,a,link,subject,myid,qf1='',qf2='',quescount=0,userlike=0):
         res = myelas.insert(myindex,q,accurateq,a,link,subject,myid,qf1,qf2,quescount,userlike)
 
         return res
@@ -44,8 +44,8 @@ class Withweb_all():
         return myelas.searchall(myindex)
 
     # 修改qa
-    def update(self,myindex, question,answer, link,subject,hitid,qfh1,qfh2):
-        myelas.updateqa(myindex,question,answer,link,subject,hitid,qfh1,qfh2)
+    def update(self,myindex, question,answer, link,subject,hitid,qfh1,qfh2,quescount=0,userlike=0):
+        myelas.updateqa(myindex,question,answer,link,subject,hitid,qfh1,qfh2,quescount,userlike)
 
 
     # 返回10个的搜索，用于管理员页面进行搜索的场景

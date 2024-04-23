@@ -34,14 +34,14 @@ def excel_table_byname(file,colnameindex=0,by_name=u'Sheet1'):
      return list
 
 def save_test():
-    result = excel_table_byname('D:\BiYeCode\QAsystem\QAManagement\ques_generate\QA_pairs.xlsx',0,'Sheet1')
+    result = excel_table_byname('G:\桌面\998\QAsystem\QAManagement\ques_generate\QA_pairs.xlsx',0,'Sheet1')
 
     # print(result)
 
     # withweb.webinit('qa_test')
 
     for qa_list in result:
-        withweb.webinsert('qa_test', qa_list['标准问题'], qa_list['标准问题'], qa_list['答案'], qa_list['答案链接'],qa_list['主题'],int(qa_list['标准问题ID']),random.randint(1, 300),round(random.uniform(0.5, 5.0), 1))
+        withweb.webinsert('qa_test', qa_list['标准问题'], qa_list['标准问题'], qa_list['答案'], qa_list['答案链接'],qa_list['主题'],int(qa_list['标准问题ID']),'','',random.randint(1, 300),round(random.uniform(0.5, 5.0), 1))
 
 
 def clear_es():
