@@ -123,48 +123,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  
 		<!-- [if lt IE 7]>  
 		    < link rel='stylesheet' type='text/css' href='ie6.css'/>  
-		<! [endif] -->  
-		<script>
-			(function() {
-		
-			// Create input element for testing
-			var inputs = document.createElement('input');
-			
-			// Create the supports object
-			var supports = {};
-			
-			supports.autofocus   = 'autofocus' in inputs;
-			supports.required    = 'required' in inputs;
-			supports.placeholder = 'placeholder' in inputs;
-		
-			// Fallback for autofocus attribute
-			if(!supports.autofocus) {
-				
-			}
-			
-			// Fallback for required attribute
-			if(!supports.required) {
-				
-			}
-		
-			// Fallback for placeholder attribute
-			if(!supports.placeholder) {
-				
-			}
-			
-			// Change text inside send button on submit
-			var send = document.getElementById('register-submit');
-			if(send) {
-				send.onclick = function () {
-					this.innerHTML = '...Sending';
-				}
-			}
-		
-		})();
-		</script>
+		<! [endif] -->
+            <script>
+                $(document).ready(function() {
+  $('#regi').submit(function(event) {
+    event.preventDefault(); // 阻止表单默认提交行为
+
+    // 获取表单数据
+    var firstName = $('input[placeholder="first name:"]').val();
+    var lastName = $('input[placeholder="last name:"]').val();
+    var email = $('input[placeholder="email address:"]').val();
+    var gender = $('input[name="radio"]:checked').val();
+    var password = $('input[placeholder="password"]').val();
+    var retypePassword = $('input[placeholder="retype password"]').val();
+    var agreeTerms = $('input[name="checkbox"]').is(':checked');
+
+    // 进行必要的验证
+    if (password !== retypePassword) {
+      alert('密码不一致，请重新输入！');
+      return;
+    }
+
+    if (!agreeTerms) {
+      alert('请同意服务条款！');
+      return;
+    }
+
+    // 创建要发送的数据对象
+    var data = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      gender: gender,
+      password: password,
+      retype_password: retypePassword,
+      agree_terms: agreeTerms
+    };
+
+    // 发送AJAX请求
+    $.ajax({
+      url: '/Register/',
+      method: 'POST',
+      data: data,
+       success: function(response) {
+        // 注册成功后的处理逻辑
+        if (response.success_message) {
+          // 显示注册成功的提示信息
+          alert("注册成功");
+          // 清空表单数据
+          $('#register-form')[0].reset();
+        }
+      },
+      error: function(xhr, status, error) {
+        // 注册失败的处理逻辑
+        alert('注册失败，请稍后重试！');
+      }
+    });
+  });
+});
+</script>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<form>
+			<form id="regi">
 				<div>
 					<label>
 						<input placeholder="first name:" type="text" tabindex="1" required="" autofocus="">
@@ -193,27 +213,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<label>
 						<input placeholder="password" type="password" tabindex="4" required="">
 					</label>
-				</div>						
+				</div>
 				<div>
 					<label>
 						<input placeholder="retype password" type="password" tabindex="4" required="">
 					</label>
-				</div>	
+				</div>
 				<div>
 					<input type="submit" value="create an account">
 				</div>
 				<div class="sky-form">
-					<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
+					<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" href=" "> terms of service</a > </label>
 				</div>
 			</form>
 			<!-- /Form -->
 		</div>
 	</div>
 	<div class="registration_left">
+<script>
+$(document).ready(function() {
+  // 登录表单提交事件处理程序
+  $('#lg').submit(function(event) {
+    event.preventDefault();
+
+    // 获取登录表单数据
+    var email = $('#lg input[placeholder="email:"]').val();
+    var password = $('#lg input[placeholder="password"]').val();
+
+    // 发送登录的AJAX请求
+    $.ajax({
+      url: '/Login/',
+      method: 'POST',
+      data: {
+        email: email,
+        password: password
+      },
+      success: function(response) {
+        if (response.success) {
+          // 登录成功，重定向到指定的URL
+          window.location.href = response.redirect_url;
+        } else {
+          // 登录失败，显示错误消息
+          alert(response.message);
+        }
+      },
+      error: function(xhr, status, error) {
+        // 请求失败的处理逻辑
+        alert('登录请求失败，请稍后重试！');
+      }
+    });
+  });
+});
+</script>
 		<h2>existing user</h2>
 		 <div class="registration_form">
 		 <!-- Form -->
-			<form>
+			<form id="lg">
 				<div>
 					<label>
 						<input placeholder="email:" type="email" tabindex="3" required="">
@@ -223,12 +278,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<label>
 						<input placeholder="password" type="password" tabindex="4" required="">
 					</label>
-				</div>						
+				</div>
 				<div>
-					<input type="submit" value="sign in">
+					<input id="login-button" type="submit" value="sign in">
 				</div>
 				<div class="forget">
-					<a href="#">forgot your password</a>
+					forgot your password
 				</div>
 			</form>
 			<!-- /Form -->
@@ -236,11 +291,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<div class="clearfix"></div>
 	</div>
-
-	<!-- end content -->
-	<!--content-->
-		</div>
-</div>
 				<!--//content-inner-->
 				<div class="sidebar-menu">
 					<header class="logo1">

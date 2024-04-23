@@ -5,12 +5,12 @@ from zhipuai import ZhipuAI
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.db.models import Count
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 import json
 
 from urllib.parse import urlencode
 
-from .models import User,QuestionCount
+from .models import User,QuestionCount,NewUser
 import time
 from .withweb import Withweb
 from .withweb_all import Withweb_all
@@ -1366,6 +1366,48 @@ def userscore(request):
         return HttpResponse("scoreOk")
     else:
         return HttpResponse("scorewrong")
+
+
+def Regsiter(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        gender = request.POST.get('gender')
+        password = request.POST.get('password')
+        retype_password = request.POST.get('retype_password')
+        agree_terms = request.POST.get('agree_terms')
+
+        # 进行必要的验证和处理
+        if password != retype_password:
+            # 密码不一致的处理逻辑
+            pass
+
+        if not agree_terms:
+            # 未同意服务条款的处理逻辑
+            pass
+        # 创建新用户
+        user = NewUser(first_name=first_name, last_name=last_name, email=email, gender=gender, password=password)
+        user.save()
+        success_message = "注册成功！"
+        return render(request, "register.html", {'success_message': success_message})
+    return render(request, "register.html")
+
+def Login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(email,password)
+        try:
+            user = NewUser.objects.get(email=email)
+            if user.password == password:
+                return JsonResponse({'success': True, 'redirect_url': '/userPage/'})
+            else:
+                return JsonResponse({'success': False, 'message': '邮箱或密码错误！'})
+        except NewUser.DoesNotExist:
+            return JsonResponse({'success': False, 'message': '用户不存在，请注册！'})
+    return render(request, "register.html")
+
 
 scheduler = BackgroundScheduler()# 后台运行
 scheduler.add_job(statistics, 'interval', seconds=2)

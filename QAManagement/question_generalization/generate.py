@@ -227,6 +227,7 @@ class Generate():
 
         elif type == 'who':
             check_sql = "SELECT question FROM who_ques"
+
             result = sqlhelper.ExecQuery(check_sql)
             # 找到所有的模板中和输入的句子相似度最高的10个句子
             # 输入需要泛化的问句和所有的句子

@@ -18,3 +18,11 @@ class UserMining(models.Model):
     userlike=models.IntegerField(null=True)  # 用户是否喜欢这个回答以及喜欢程度
     times = models.CharField(max_length=64,null=True) # 用户提问时间
 
+class NewUser(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    email = models.EmailField(unique=True)
+    gender = models.CharField(max_length=10)
+    password = models.CharField(max_length=128)
+    userquestion = models.CharField(max_length=64)
+    question_time = models.CharField(max_length=64)
