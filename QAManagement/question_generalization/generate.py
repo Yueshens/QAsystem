@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/14 10:39
-# @Author  : wb
-# @File    : generate.py
 
 from QAManagement.question_generalization.extract import Extract
 import requests
@@ -548,47 +544,6 @@ class Generate():
     # 泛化函数
     # 输入原始问句，泛化模板
     def generalize(self,ques_list,model_list,delete_id):
-        # question = '淘宝 一般 多久 自动 确认 收货 ？'nz a how_long d v n wp
-        # model = '淘宝 自动 确认 时间 是 多久 ？'nz d v n modal how_long wp
-
-        # 句子成分之间的关系包含，并且相同词性可以替换
-        # 调用tree
-
-        # 输入ques_list和model_list
-        # 这两个list中包含三个list
-        # 输入问句分词words_list
-        # 输入词性postags_list
-        # 输入关系arcs_list
-        # templatetree = Templatetree()
-        #
-        # new_ques = ''
-        #
-        # # 生成出的泛化的句子
-        # result = templatetree.main(ques_list,model_list)
-        # if result != None:
-        #     # 把原来问句中的被删除的词填入新的问句中
-        #     new_ques_list = self.revert(ques_list[0],result[1],delete_id)
-        #
-        #     for i in new_ques_list:
-        #         new_ques += i
-        #
-        #     return new_ques
-        # else:
-        #     return None
-
-        # if result != None:
-        #     return result
-        # else:
-        #     return None
-
-
-        # 想到另外一种可能更好的方法，使用语义角色标注
-        # roles = Generate.labeller.label(ques_list[0], ques_list[1], ques_list[2])  # 语义角色标注
-        # 打印结果
-        # for role in roles:
-        #     print(role.index,
-        #           "".join(["%s:(%d,%d)" % (arg.name, arg.range.start, arg.range.end) for arg in role.arguments]))
-
         ques_result = self.ltp_request(ques_list[0])
         model_result = self.ltp_request(model_list[0])
 
@@ -596,23 +551,6 @@ class Generate():
         ques_a1 = 0
         model_a0 = 0
         model_a1 = 0
-
-        # for ques_arc in ques_result:
-        #     for model_arc in model_result:
-        #         # 找根节点
-        #         if ques_arc['semrelate'] == 'Root' and model_arc['semrelate'] == 'Root':
-        #             # 找出其中的语义角色
-        #             if len(ques_arc['arg']) != 0 and len(model_arc['arg']) != 0:
-        #                 # 如果A0，A1这些都有的话，那么就可以替换了
-        #                 # list_c = [a['type'] for a in ques_arc['arg'][i] if a in model_arc['arg'][j] for i in range(len(ques_arc['arg'])) for j in range(len(model_arc['arg']))]
-        #                 # 找其中的一个A0
-        #                 for i in ques_arc['arg']:
-        #                     if i['type'] == 'A0':
-        #                         for j in model_arc['arg']:
-        #                             if j['type'] == 'A0':
-        #
-        #                     elif i['type'] == 'A1':
-
         # 匹配A0，A1的个数
         for ques_arc in ques_result:
             if ques_arc['semrelate'] == 'Root':

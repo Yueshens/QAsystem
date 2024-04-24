@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/27 15:44
-# @Author  : wb
-# @File    : ltp_test.py
 
-# 测试LTP云的
 
 import os
 from pyltp import Segmentor

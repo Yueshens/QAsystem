@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/15 9:41
-# @Author  : wb
-# @File    : load_model.py
-
 # 读取事先下载的词向量
 
 # 用gensim打开glove词向量需要在向量的开头增加一行：所有的单词数 词向量的维度

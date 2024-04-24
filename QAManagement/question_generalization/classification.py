@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/11 9:00
-# @Author  : wb
-# @File    : classification.py
-
 import os
 from pyltp import Segmentor
 from pyltp import Postagger

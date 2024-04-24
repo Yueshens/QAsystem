@@ -1,5 +1,3 @@
-# coding: utf-8
-
 
 import requests
 from pyltp import Segmentor
@@ -39,16 +37,6 @@ args = {
     'xml_input':'true',
      'text' : xml
 }
-# args_others = { 
-#     'api_key' : 'a1R923E7s37daeNz7dsMeXiTexWGoookJX2HONwC',
-#     'pattern' : 'sdp',
-#     'format' : 'json',
-#     'xml_input':'true',
-#      'text' : xml
-# }
-#args_text =  { 'text' : '华为云提供了Web化的服务管理平台（即控制台）和基于HTTPS请求的API（Application programming interface）管理方式。'}
-# 两个字典合并
-#args = dict(args_others, **args_text)
 r = requests.post(url_get_base, data = args)
 
 
@@ -60,8 +48,6 @@ for i in content[0][0]:
     print(i)
 #print(r.text)
 
-
-# In[25]:
 
 
 # 写两个函数，函数使用来加标点符号的
@@ -240,29 +226,7 @@ if Prup_flag:# 有目的的问题
     # 最终的答案
     print(answer_sen)
     
-    
-#     # 问题的拼接
-#     # 为什么
-#     for con in content[0][0]:
-#          if find_parent(con,content[0][0]) == parent_id or con['semparent'] == parent_id or con['id'] == parent_id:
-#             question_sen += con['cont'] 
-    
-#     # 答案的拼接
-#     for con in content[0][0]:
-#         if find_parent(con,content[0][0]) == id or con['semparent'] == id or con['id'] == id:
-#             answer_sen += con['cont']
-       
-#     question_sen = ques_punctuation(question_sen)
-#     print(question_sen)
-    
-#     answer_sen = ans_punctuation(answer_sen)
-#     print(answer_sen)
-#         if find_parent(con,con[0][0]) == id or con['id'] == id:
-#             if con['semrelate'] not in ['mPrep','mConj']:# 这些词中没有介词和连词
-#                 question_sen += con['cont'] 
-                
-#     question_sen = ques_punctuation(question_sen)
-#     print(question_sen)
+
     
 else:
     print('没有Prup的问题')
@@ -478,8 +442,6 @@ else:
 # In[64]:
 
 
-# 为这个莫名其妙的 EXP（当事关系）写一个问题生成
-# 例如，通过华为云用户手册，您可以登录华为云服务器。
 Exp_flag = False
 question_sen = ''
 answer_sen = ''
@@ -516,21 +478,6 @@ else:
     print('没有EXP的问题')
 
 
-# In[ ]:
-
-
-# 列表型的问题
-# 等，们 表示多数的标记，找到这些标记，找出这些标记有关的所有有并列的词
-# eg：华为云提供了Web化的服务管理平台（即控制台）和基于HTTPS请求的API（Application programming interface）管理方式
-# 华为云提供了哪些管理方式
-
-
-# In[50]:
-
-
-# 书名号的提问
-# 具体操作请参见《CDN参考手册》
-# 提问：具体操作请参见什么东西
 Book_flag = False
 question_sen = ''
 answer_sen = ''

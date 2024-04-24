@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/15 9:35
-# @Author  : wb
-# @File    : similarity.py
+
 
 # 使用gensim计算句子相似度
 

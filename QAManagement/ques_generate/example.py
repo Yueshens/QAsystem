@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/6/20 15:41
-# @Author  : wb
-# @File    : example.py
 
-# 本页面是用来实验seq2seq模型对于问题生成的
 
 from .import seq2seq
 from .seq2seq.trainer import SupervisedTrainer

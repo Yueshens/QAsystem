@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/15 15:25
-# @Author  : wb
-# @File    : similarity_test.py
 
 # 相似度计算的测试
 from QAManagement.question_generalization.similarity import Similarity

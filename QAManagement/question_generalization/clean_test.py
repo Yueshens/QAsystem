@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/11 16:20
-# @Author  : wb
-# @File    : clean_test.py
 
 # pyltp的分句检测
 from pyltp import SentenceSplitter

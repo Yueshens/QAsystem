@@ -1219,11 +1219,7 @@ def questionnum(request):
                     data['num'] = Sundaynum
 
                 week_data.append(data)
-            # week_data 的格式 [{'date': '2018-08-16', 'weekday': '周四', 'num': 0},{}]
-            # 传送过来的数据格式data
-            # {“maxnum”：87，"minmun": 10, “datanum”：[["周一"，34]，["周二", 87]]}, 要传一个条数最大值与最小值好划分纵坐标
-            # print(week_data)
-            # 按照num排序，取出最大最小值
+
             week_data.sort(key=lambda k:list(k.values())[2],reverse=True)
             maxnum = week_data[0]['num']
             minnum = week_data[-1]['num']

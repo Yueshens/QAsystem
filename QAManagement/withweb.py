@@ -7,12 +7,6 @@ import datetime,time,calendar
 myelas = Elas()
 myk1 = k1()
 myk2 = k2()
-# import elas
-#
-# myelas = elas.Elas()
-####插入
-# myelas.init('index35')
-
 
 
 

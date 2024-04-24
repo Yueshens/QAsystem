@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/18 16:58
-# @Author  : wb
-# @File    : tree.py
+
 
 from treelib import Node,Tree
 

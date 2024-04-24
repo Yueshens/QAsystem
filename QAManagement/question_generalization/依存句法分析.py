@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/17 10:27
-# @Author  : wb
-# @File    : 依存句法分析.py
-
-# 使用依存句法分析句子结构
 
 import os
 from pyltp import Segmentor

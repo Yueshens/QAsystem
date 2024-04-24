@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/30 2:01
-# @Author  : wb
-# @File    : temporary_generate.py
 import random
 
 from QAManagement.question_generalization.clean import Clean
 
 # 临时生成泛化
 class Temporary():
-    # w2v = KeyedVectors.load_word2vec_format('/home/wang/data/chinese_model.txt', limit=500000)
     # 分类的疑问词
     # 多久 how-long
     how_long = ['多长时间', '多少时间', '多久']

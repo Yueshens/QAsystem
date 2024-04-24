@@ -1,31 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/11 15:13
-# @Author  : wb
-# @File    : classification_test.py
-
-# 分类文件的测试
-
-# how_do = ['怎样','怎么','怎么样','如何','哪些方法','哪些方式','哪些途径','何种方法','什么方法','什么方式','什么途径']
-#
-# question = '数码大师生成视频后如何修改'
-# for question_word in how_do:
-#     if question_word in question:
-#         print('yes')
-#     else:
-#         print('no')
-
-
-# class Test():
-#     a = 1
-#     b = 2
-#     c = 3
-#
-# x = ['a','b','c']
-#
-# test = Test()
-# for i in x:
-#     print(test + '.' + i)
-
 
 yes_no = ['能','能够','会可','可能','可以','有','是']
 # 定义类

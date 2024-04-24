@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/15 22:12
-# @Author  : wb
-# @File    : mysql_test.py
 
 # 测试数据库
 

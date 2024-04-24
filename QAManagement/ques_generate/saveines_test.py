@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/30 16:09
-# @Author  : wb
-# @File    : saveines_test.py
+
 
 from QAManagement.ques_generate.QA_save import SaveInEs
 from QAManagement.withweb_all import Withweb_all

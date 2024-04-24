@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/25 16:55
-# @Author  : wb
-# @File    : elas_init.py
 
 from QAManagement.elas_f_k1 import k1
 from QAManagement.elas_f_k2 import k2

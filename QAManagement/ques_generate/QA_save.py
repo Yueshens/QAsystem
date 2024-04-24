@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/29 20:18
-# @Author  : wb
-# @File    : QA_save.py
 
-# 用来连接es，保存QA的
 
 from QAManagement.withweb_all import Withweb_all
 class SaveInEs():

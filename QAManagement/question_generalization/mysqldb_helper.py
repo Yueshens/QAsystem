@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/13 16:09
-# @Author  : wb
-# @File    : mysqldb_helper.py
 
-import pymysql
 # mysql 数据库的工具类
 
 class SQLHelper():

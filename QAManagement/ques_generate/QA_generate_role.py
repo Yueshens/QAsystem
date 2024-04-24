@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
 
 import os
 from pyltp import SementicRoleLabeller
@@ -11,13 +9,9 @@ from pyltp import Postagger
 from pyltp import Parser
 
 
-# In[2]:
-
 
 LTP_DATA_DIR = '../data/ltp_data'  # ltp模型目录的路径
 
-
-# In[3]:
 
 
 # 分词

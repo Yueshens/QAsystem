@@ -139,9 +139,6 @@ class GetTime():
     def hourRange(self,beginDate, endDate,n):
         dates = []
         dt = datetime.datetime.strptime(beginDate, "%Y-%m-%d %H:%M:%S")
-        # dt = datetime.datetime.strftime('%Y-%m-%d', dtime)
-        # time_array = time.strptime(res.times, '%Y-%m-%d %H:%M:%S')
-        # str_date = time.
         date = beginDate
         while date <= endDate:
             dates.append(date)
@@ -155,6 +152,5 @@ if __name__ == '__main__':
     print(gettime.get_days_before_today(1))
     print(gettime.get_months_before_tody(1))
     print(gettime.month_get())
-    print(gettime.dateRange('2018-07-25 11:10:03','2018-08-24 11:10:03',n=5))
-    # print(gettime.hourRange('2018-08-01 17:23:21', '2018-08-02 17:23:21'))
+
 

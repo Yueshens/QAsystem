@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 from pyltp import SementicRoleLabeller
 from pyltp import Segmentor

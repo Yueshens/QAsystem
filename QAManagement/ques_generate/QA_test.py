@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/28 9:15
-# @Author  : wb
-# @File    : QA_test.py
 
-# 测试QA生成模块
 
 from QAManagement.ques_generate.QG_paragraph import Paragraph
 import os
@@ -23,11 +18,7 @@ for file in files: # 遍历文件夹文件夹，不是文件夹
      if not os.path.isdir(file): # 判断是否是才打开
           urls.append(path+"/"+file)
 
-# print(urls) # 打印结果
-# print(len(urls))
-# print(urls[101])
-# paths = [urls[101]]
-#
+
 result = paragaph.main(urls)
 
 rexcel = open_workbook("../data/QA_pairs.xlsx") # 用wlrd提供的方法读取一个excel文件
@@ -44,9 +35,3 @@ for value in result:
     table.write(row, 4, value['answer_link'])
     row += 1
 excel.save("../data/QA_pairs.xlsx") # xlwt对象的保存方法，这时便覆盖掉了原来的excel
-
-
-# print(result)
-# for url in urls:
-#     result = paragaph.main(url)
-#     print(result)

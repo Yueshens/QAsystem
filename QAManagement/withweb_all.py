@@ -4,15 +4,6 @@ from QAManagement.elas_f_k2 import k2
 myelas = Elas()
 myk1=k1()
 myk2=k2()
-# import elas
-#
-# myelas = elas.Elas()
-####插入
-# myelas.init('index35')
-
-
-
-
 
 
 class Withweb_all():

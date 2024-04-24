@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/25 21:12
-# @Author  : wb
-# @File    : QG_paragraph.py
-
-# 本文件是用来生成标题的问题的
-# 首先分为两大类：标题就是问题的；标题是正常短语的
 
 import os
 from pyltp import Segmentor
@@ -25,21 +18,13 @@ class Paragraph(object):
         另一种是问句，但没有以问号结尾
         这一种可以通过检查句子中是否有疑问词来判断
     """
-    # # 初始化的时候调用LTP的模型
-    # LTP_DATA_DIR = '../data/ltp_data'  # ltp模型目录的路径
-    #
-    # # 分词
-    # cws_model_path = os.path.join(LTP_DATA_DIR, 'cws.model')  # 分词模型路径，模型名称为`cws.model`
-    # segmentor = Segmentor()  # 初始化实例
-    # segmentor.load_with_lexicon(cws_model_path, '../data/new_dictionary.txt')  # 加载模型，第二个参数是您的增量模型路径
-    #
 
 
     # 分词
     LTP_DATA_DIR = 'ltp_data_v3.4.0/'  # ltp模型目录的路径
     cws_model_path = os.path.join(LTP_DATA_DIR, 'cws.model')  # 分词模型路径，模型名称为`cws.model`
     segmentor = Segmentor(cws_model_path)  # 初始化实例
-    # segmentor.load_with_lexicon(cws_model_path, '/home/wang/data/new_dictionary.txt')  # 加载模型，第二个参数是您的增量模型路径
+
 
 
     # 词性标注

@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/26 10:49
-# @Author  : wb
-# @File    : test_title.py
 
 import os
 from pyltp import SementicRoleLabeller
@@ -35,9 +31,7 @@ ques_words_list = []
 for line in ques_word_file:
     ques_words_list.append(line.strip('\n'))
 
-# 读取抽取好的json文件
-# 遍历上传的文件夹中所有的文件
-# 还需要判断上传的是文件夹目录还是文件
+
 path = "../data/notable" #文件夹目录
 files= os.listdir(path) #得到文件夹下的所有文件名称
 urls = []

@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/14 10:15
-# @Author  : wb
-# @File    : punctuation_test.py
 
 # 标点符号的拼接测试
 

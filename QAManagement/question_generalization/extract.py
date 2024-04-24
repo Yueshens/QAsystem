@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/8/13 9:35
-# @Author  : wb
-# @File    : extract.py
 
 import os
 from pyltp import Segmentor
@@ -71,76 +67,6 @@ class Extract():
         postags = Extract.postagger.postag(words_list)  # 词性标注
         postags_list = list(postags)
 
-        # arcs = Extract.parser.parse(words_list, postags_list)  # 句法分析
-        # # print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
-        # arcs_list = []
-        # for arc in arcs:
-        #     arcs_list.append(str(arc.head) + ':' + str(arc.relation))
-
-        # # 将疑问词替换成标签
-        # if type == 'how_do':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.how_do:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'how_long':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.how_long:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'how_much':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.how_much:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'where':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.where:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'when':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.when:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'which':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.which:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'who':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.who:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'why':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.why:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # # elif type == 'definition':
-        # #     # 首先先将疑问词替换成标注
-        # #     for ques_type_word in Extract.definition:
-        # #         if ques_type_word in question:
-        # #             question.replace(ques_type_word,type)
-        # elif type == 'list_ques':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.list_ques:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-        # elif type == 'common_ques':
-        #     # 首先先将疑问词替换成标注
-        #     for ques_type_word in Extract.common_ques:
-        #         if ques_type_word in question:
-        #             question.replace(ques_type_word,type)
-
-
-        # 这里没有设置yes_no问题的标注
-        # 定义类的是什么也不大好
-
-        # 对替换之后的问句在进行分词
-
-        # 将分词好的序列中的疑问词替换成标签
 
         type = None
         for i in range(len(words_list)):
@@ -328,24 +254,6 @@ class Extract():
 
         self.savedb(words_list=words_list,postags_list=postags_list,arcs_list=arcs_list,type=type)
 
-if __name__ == "__main__":
-    # 生成并存储模板
-    # 读取各个种类的问句
-
-    question_type = ['how_much','how_long','how_do','when','where','which','who','why','list_ques','common_ques']
-
-    extract = Extract()
-    # 各个种类的问句
-    for type in question_type:
-        filename = '/home/wang/data/classification/' + type + '_questions'
-        file = open(filename)
-
-        question_list = []
-        for line in file:
-            question_list.append(line.strip('\n'))
-
-        for question in question_list:
-            extract.main(question=question)
 
 
 

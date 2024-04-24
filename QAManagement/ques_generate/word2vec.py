@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/7/26 21:37
-# @Author  : wb
-# @File    : word2vec.py
+
 
 # 使用词向量
 # 用gensim打开glove词向量需要在向量的开头增加一行：所有的单词数 词向量的维度
@@ -23,7 +20,6 @@ from sys import platform
 #     return count
 #
 #
-# # Linux或者Windows下打开词向量文件，在开始增加一行
 # def prepend_line(infile, outfile, line):
 #     with open(infile, 'r') as old:
 #         with open(outfile, 'w') as new:
